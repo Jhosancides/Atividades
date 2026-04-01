@@ -1,0 +1,7 @@
+def pareimpar(numero):
+    if numero %2 ==0:
+      return('0 numero é par')
+    else:
+     return('0 numero é impar')
+resultado = pareimpar(8)
+print(resultado)
