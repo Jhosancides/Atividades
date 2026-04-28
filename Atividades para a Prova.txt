@@ -1,0 +1,174 @@
+Atividade para prova
+
+Questão 01 (Apresentação pessoal)
+
+nome = "Ana"
+idade = 25
+cidade = "Curitiba"
+
+print(f"Olá meu nome é {nome}, tenho {idade} anos e moro em {cidade}.")
+
+
+Questão 02 (cALCULADORA)
+
+n1 = float(input("Digite o primeiro número:"))
+n2 = float(input("Digite o segundo número:"))
+
+soma = n1 + n2
+subtracao = n1 - n2
+multiplicacao = n1 * n2
+
+if n2 != 0:
+    divisao = n1 / n2
+else:
+    divisao = "não é possivel dividir por zero"
+    
+print(f"Soma: {soma}")
+print(f"Subtração: {subtracao}")
+print(f"Multiplicação: {multiplicacao}")
+print(f"Divisão: {divisao}")
+
+
+Questão 03 (Tabuada)
+
+numero = float(input("Digite um número:"))
+
+for i in range(1, 11):
+    print(f"{numero} x {i} = {numero * i}")
+
+
+Questão 04 (Adivinhe o número)
+
+numero_secreto = 7
+print("Tente adivinhar o número!")
+while True:
+    palpite = int(input("Digite seu palpite:"))
+    if palpite < numero_secreto:
+        print("O número é maior.")
+    elif palpite > numero_secreto:
+        print("O número é menor.")
+    else:
+        print("Parabéns! Você acertou o número!")
+        break
+
+
+Questão 05 (Lista de compras)
+
+Compras = []
+
+for i in range(5):
+    item = input(f"Digite o item {i + 1}:")
+    Compras.append(item)
+    
+print("\nLista de Compras:")
+for i, item in enumerate(Compras, 1):
+    print(f"{i}. {item}")
+
+Questão 06 (Maior e menor da turma)
+
+notas = []
+
+for i in range(6):
+    nota = float(input(f"Digite a nota do aluno {i + 1}: "))
+    notas.append(nota)
+
+maior = max(notas)
+menor = min(notas)
+media = sum(notas) / len(notas)
+
+print(f"\nMaior nota: {maior}")
+print(f"Menor nota: {menor}")
+print(f"Média da turma: {media:.2f}")
+
+Questão 07 (Verificador de par ou ímpar)
+
+def par_ou_impar(n):
+    if n % 2 == 0:
+        return "par"
+    else:
+        return "ímpar"
+
+for i in range(3):
+    numero = int(input(f"Digite o {i + 1}º número: "))
+    resultado = par_ou_impar(numero)
+    print(f"O número {numero} é {resultado}.")
+
+
+Questão 08 (Calculadora de IMC)
+
+def calcular_imc(peso, altura):
+    return peso / (altura ** 2)
+
+
+def classificar_imc(imc):
+    if imc < 18.5:
+        return "Abaixo do peso"
+    elif imc < 25:
+        return "Normal"
+    elif imc < 30:
+        return "Sobrepeso"
+    else:
+        return "Obesidade"
+
+
+peso = float(input("Digite seu peso (kg): "))
+altura = float(input("Digite sua altura (m): "))
+
+
+imc = calcular_imc(peso, altura)
+classificacao = classificar_imc(imc)
+
+
+print(f"\nSeu IMC é: {imc:.2f}")
+print(f"Classificação: {classificacao}")
+
+
+
+Questão 09 (Gerenciador de tarefas no terminal)
+
+tarefas = [] 
+
+def listar():
+    if len(tarefas) == 0:
+        print('Nenhuma tarefa cadastrada.')
+    else:
+        print("\nLista de tarefas:")
+        for i, t in enumerate(tarefas, 1):
+            print(f'{i}. {t}')
+
+def adicionar():
+    tarefa = input("Digite a nova tarefa: ")
+    tarefas.append(tarefa)
+    print("Tarefa adicionada com sucesso!")
+
+def remover():
+    listar()
+    if len(tarefas) == 0:
+        return
+    
+    tarefa = input("Digite o nome da tarefa que deseja remover: ")
+    
+    if tarefa in tarefas:
+        tarefas.remove(tarefa)
+        print("Tarefa removida com sucesso!")
+    else:
+        print("Tarefa não encontrada.")
+
+while True:
+    print('\n1 - Adicionar  2 - Remover  3 - Listar  4 - Sair')
+    opcao = input('Escolha: ')
+    
+    if opcao == '1':
+        adicionar()
+    elif opcao == '2':
+        remover()
+    elif opcao == '3':
+        listar()
+    elif opcao == '4':
+        print("Saindo do programa...")
+        break
+    else:
+        print("Opção inválida. Tente novamente.")
+
+
+
